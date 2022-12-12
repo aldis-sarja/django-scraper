@@ -12,4 +12,7 @@ def home(request):
     articles = paginator.get_page(page_number)
 
     serializer = ArticleSerializer(articles, many=True)
-    return Response(serializer.data)
+    return Response({
+        'total_pages': paginator.num_pages,
+        'articles': serializer.data,
+    })

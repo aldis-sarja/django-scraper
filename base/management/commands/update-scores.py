@@ -1,6 +1,9 @@
 from django.core.management.base import BaseCommand
 from base.models import Article
 import requests
+import environ
+
+env = environ.Env()
 
 
 class Command(BaseCommand):
@@ -9,7 +12,7 @@ class Command(BaseCommand):
 
         for article in articles:
             new_article = requests.get(
-                'https://hacker-news.firebaseio.com/v0/item/' + str(article.article_id) + '.json').json()
+                env('BASE_URL') + 'item/' + str(article.article_id) + '.json').json()
             if article.points != new_article['score']:
                 article.points = new_article['score']
                 article.save()
