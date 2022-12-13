@@ -1,7 +1,7 @@
 # Scraper app backend
 
 Built with Python and Django
-This is backend part of the app. For frontend look to [Scraper frontend]()
+This is backend part of the app. For frontend look to [Scraper frontend](https://github.com/aldis-sarja/scraper-frontend.git)
 
 ## Installation
 
@@ -79,6 +79,7 @@ Install and run frontend part.
 ```
 {
     "total_pages":,
+    "total_rows":,
     "articles": [
         {
             "id":,
@@ -94,4 +95,4 @@ Install and run frontend part.
 
 ---
 
-- `/api/?page=2` Get the next 10 articles (second page).
+- `/api/?page=2&rows-per-page=20` Get the next 20 articles (second page).
