@@ -9,6 +9,7 @@ djangorestframework = "*"
 requests = "*"
 mysqlclient = "*"
 django-environ = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 
