@@ -28,6 +28,7 @@ cp .env.example .env
 Configure your MySQL database:
 
 ```dosini
+DB_CONNECTION=<DB-engine>
 DB_NAME=<your-db-name>
 DB_USERNAME=<your-db-user-name>
 DB_PASSWORD=<your-password>
@@ -61,6 +62,15 @@ You can then update the scores records and add new articles from time to time:
 pipenv run python manage.py update-scores
 pipenv run python manage.py update-news
 ```
+
+You can set these commands in crontab. For exaple:
+
+```bash
+crontab -e
+*/15 * * * * cd <path-to-scraper>/ && pipenv run python manage.py update-scores
+```
+
+This will update database every 15th. minutes. (set your own time interval).
 
 ## Usage
 
