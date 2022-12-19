@@ -1,5 +1,5 @@
 # Scraper app backend
-
+For fetching news articles from hacker-news.firebaseio.com
 Built with Python and Django
 This is backend part of the app. For frontend look to [Scraper frontend](https://github.com/aldis-sarja/scraper-frontend.git)
 

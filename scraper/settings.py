@@ -81,14 +81,12 @@ WSGI_APPLICATION = 'scraper.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# db_name = env('DB_NAME')
 if env('DB_CONNECTION') == 'postgres':
     db_engine = 'django.db.backends.postgresql'
 elif env('DB_CONNECTION') == 'mysql':
     db_engine = 'django.db.backends.mysql'
 else:
     db_engine = 'django.db.backends.sqlite3'
-    # db_name = BASE_DIR / 'db.sqlite3'
 
 DATABASES = {
     'default': {
